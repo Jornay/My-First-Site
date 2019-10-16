@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang ="pt-br">
+<head>
+        <meta charset="UTF-8"/>
+        <title>Tudo sobre Google Glasses</title>
+        <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+        <link rel="stylesheet" href="_css/form.css">
+<link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet"/> 
+</head>
+<script src="_javascript/funcoes.js"></script>
+<script>
+    function calq_total(){
+        var qtd=parseInt(document.getElementById ('cquant').value);
+        total= qtd*1500;
+        document.getElementById('cpre').value= total; 
+        }
+</script>
+<body>
+<div id="interface">
+
+    <header id="cabecalho">
+<hgroup>
+<h1>Google Glass</h1>
+<h2>A revolução do Google está chegando</h2>
+</hgroup>
+<figure>
+    <img id="icone" src="_imagens/glass-oculos-preto-peq.png">
+</figure>
+
+<nav id="menu">
+    <h1>Menu Principal</h1>
+    <ul>
+        <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</li></a>
+        <li  onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</li></a>
+        <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</li></a>
+        <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</li></a>
+        <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</li></a>
+    </ul>
+</nav>
+    </header>
+<section id="corpo-full">
+    <article id="noticia-artigo">
+        <header id="cabecalho-artigo">
+    <hgroup>
+        <h2>Glass > Contato</h2>
+        <h1>Formulário de contato</h1>
+        <h3>por Gustavo Guanabara</h3>
+        <h3 class="direita"> Atualizado em 01/Maio/2013</h3>
+    </hgroup>
+</header> 
+
+<form method="post" id="fcontato" action="mailto:contato@yahoo.com.br" oninput="calq_total();"/>
+<fieldset id="usuario"><legend>Identificação do Usuário</legend>
+    <p><label for="cnome">Nome:</label><input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="Nome Completo" /></p>
+    <p><label for="csenha">Senha:</label><input type="password" name="tsenha" id="csenha" size="8" maxlength="10" placeholder="10 dígitos" /></p>
+    <p><label for="cmail">E-mail:</label><input type="email" name="tmail" id="cmail" size="20" maxlength="40" /></p>
+    <fieldset id="sexo"><legend>Sexo:</legend>
+        <input type="radio" name="tsexo" id="cmasc"/><label for="cmasc">Masculino</label><br>
+        <input type="radio" name="tsexo" id="cfem"/><label for="cfem">Feminino</label>
+        </fieldset>
+    <p><input type="date" name="tnasc" id="cnasc"/>Data de Nascimento:</p>
+</fieldset>  
+<fieldset id="endereco"><legend>Endereço do Usuário</legend>
+    <p><label for="clagra">Logradouro:</label> <input type="text" name="tlagra" id="clagra" size="13" maxlength="80" placeholder="Rua, Av , Trav" /></p>
+    <p><label for="cnum">Número:</label> <input type="number" name="tnum" id="cnum" min="0" max="9999"/></p>
+    <p><label for="cesta">Estado:</label><select name="testa" id="cesta" > </p>
+        <option>São Paulo</option>
+        <option>Rio Grande do Sul</option>
+        <option>Paraná</option>
+        <option>Minas Gerais</option>
+        <option>Acre</option>
+        <option>Mato Grosso</option>
+        <option>Rio de Janeiro</option>
+    </select>
+    <p><label for="ccid">Cidade:</label><input type="text" name="tcid" id="ccid" maxlength="40" size="20"
+    placeholder="Cidade"></p>
+</fieldset>
+<fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+    <p><label for="cgrau">Grau de Urgência: Min</label><input type="range" name="tgrau" id="cgray" min="0" max="10" step="2"/>Max</p>
+    <p><label for="cmen">Mensagem:</label><textarea name="tmen" id="cmen" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+</fieldset>
+<fieldset id="pedido"><legend>Quero um Google Glass</legend>
+    <p> <input type="checkbox" name="tped" id="cped" checked/>
+    <label for="cped">Gostaria de adquirir um Google Glass quando disponível</label></p>
+    <p><input type="color" name="tcor" id="ccor" value="#0000FF"/>
+    <label for="ccor">Cor:</label></p>
+    <p><label for="cquant">Quantidade:</label>
+    <input type="number" name="tquant" id="cquant" min="0" max="5" value="0"</p>
+    <p><label for="cpre">Preço Total: R$</label><input type="text" name="tpre" id="cpre" placeholder="Total a pagar" readonly /></p> 
+
+</fieldset>
+    <input type="image" name="tenviar" id="cenviar" src="_imagens/botao-enviar.png">
+</form>
+</article>
+</section>
+
+<footer id="rodape">
+<p>Copyright 2013 - by Gustavo Guanabara
+<br><a href = "http://facebook.com/cursosemvideo" target="blank">Facebook</a> | <a href ="http://twitter.com/cursosemvideo" target="blank">Twitter</a></br></p>
+</footer>
+</div>
+</body>
+</html>     
